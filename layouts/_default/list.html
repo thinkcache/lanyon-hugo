@@ -1,13 +1,29 @@
 {{ partial "default_head.html" . }}
 
 <div class="post">
-  <h1 class="post-title">{{ .Title }}</h1>
+  <h1 class="post-title" >{{ .Title }}</h1>
   <ul id="list">
-    {{ range .Data.Pages }}
-    <li>{{ .Site.Params.DateForm | default "Jan 2, 2006" | .Date.Format }} -
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-    </li>
+    {{if (eq .Title "Categories")}}
+    {{ range $name, $items := .Site.Taxonomies.categories }}
+      <li><a href="{{ $.Site.BaseURL }}categories/{{ $name | urlize | lower }}">{{ $name }} &nbsp;<span>({{ len $items }})</span></a></li>
     {{ end }}
+    {{else if  (eq .Title "Tags")}}
+    {{ range $name, $items := .Site.Taxonomies.tags }}
+      <li><a href="{{ $.Site.BaseURL }}tags/{{ $name | urlize | lower }}">{{ $name }} &nbsp;<span>({{ len $items }})</span></a></li>
+    {{ end }}
+    {{else}}
+
+      {{ range .Data.Pages }}
+      <li>
+        {{ .Site.Params.DateForm | default "Jan 2, 2006" | .Date.Format }} -
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </li>
+      {{ end }}
+
+    {{ end }}
+
+
+
   </ul>
 </div>
 

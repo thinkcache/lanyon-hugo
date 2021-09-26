@@ -2,11 +2,10 @@ name = "Lanyon"
 license = "MIT"
 licenselink = "https://github.com/tummychow/lanyon-hugo/blob/master/LICENSE.md"
 description = "Lanyon-Hugo is a theme designed for blogging."
-homepage = "https://github.com/tummychow/lanyon-hugo"
-tags = ["blog",]
-features = ["blog", ]
+homepage = "https://github.com/thinkcache/"
+tags = ["master","slave","master2"]
+features = ["blog","master1" ]
 min_version = 0.14
-
 [author]
     name = "tummychow"
 

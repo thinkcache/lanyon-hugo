@@ -5,12 +5,24 @@
 <!-- Toggleable sidebar -->
 <div class="sidebar" id="sidebar">
   <div class="sidebar-item">
-    <p>A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.</p>
+    <p> Aniket Shirsat </p>
+    <p>
+      Data Engineering @ Vibrent Health<br>
+      GCP Certified Data Engineer <br>
+      MS Business Analytics '18 @ ASU <br>
+      Electronics Engineer</p>
+
+    <p>  Loves coding, reading, traveling and hiking.  </p>
+
+    <p> <a href="https://www.linkedin.com/in/aniketshirsat/" target='_blank'>LinkedIn   </a>  |
+        <a href="https://twitter.com/an1ke7" target='_blank'> Twitter   </a>   |
+        <a href="https://github.com/an1ke7" target='_blank'> Github   </a></p>
+    <!-- <p>  Follow me on twitter <a href="https://twitter.com/an1ke7" target="_blank">@an1ke7</a> </p> -->
   </div>
 
   <nav class="sidebar-nav">
     <a class="sidebar-nav-item {{ if .IsHome }} active {{ end }}" href="/">Home</a>
-    <a class="sidebar-nav-item {{ if eq .RelPermalink "/post/" }} active {{ end }}" href="/post">Posts</a>
+
 
     {{ $thisperma := .Permalink }}
     {{ range .Site.Pages.ByWeight }}
@@ -18,10 +30,11 @@
         <a class="sidebar-nav-item {{ if eq .Permalink $thisperma }} active {{ end }}" href="{{ .Permalink }}">{{ .Title }}</a>
       {{ end }}
     {{ end }}
-
-    <a class="sidebar-nav-item" href="{{ .Site.Params.Github.Url }}/archive/{{ .Site.Params.Github.Head }}.zip">Download</a>
-    <a class="sidebar-nav-item" href="{{ .Site.Params.Github.Url }}">GitHub project</a>
-    <span class="sidebar-nav-item">Currently on {{ .Site.Params.Github.Head }}</span>
+    <!-- <a class="sidebar-nav-item {{ if eq .RelPermalink "/post/" }} active {{ end }}" href="/post">Posts</a> -->
+    <a class="sidebar-nav-item " href="/tags/ms-in-the-us/">MS in the US Journal</a>
+    <a class="sidebar-nav-item " href="/tags/bookshelf/">BookShelf</a>
+    <!-- <a class="sidebar-nav-item" href="{{ .Site.Params.Github.Url }}">GitHub project</a> "Links to Github"-->
+    <!-- <span class="sidebar-nav-item">Currently on {{ .Site.Params.Github.Head }}</span>  #shows "Currently on master"-->
   </nav>
 
   <div class="sidebar-item">

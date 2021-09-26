@@ -1,0 +1,22 @@
+<!-- {{ .Params.tags}}
+
+{{ .Params.categories}}
+.Site.Taxonomies.tags
+-->
+
+<h5>
+Category: {{ with .Params.categories }}
+{{ $name := delimit . ", " }}
+<a href="/categories/{{ $name | urlize }}">{{ $name }}</a>
+{{ end }}
+
+{{ `|` }}
+
+{{ $taxo := "tags" }}
+{{ range .Param $taxo }}
+    {{ $name := . }}
+        {{ with $.Site.GetPage (printf "/%s/%s" $taxo ($name | urlize)) }}
+            <a href="{{ .Permalink }}">{{"#"}}{{ $name }}</a>
+        {{ end }}
+{{ end }}
+</h5>
